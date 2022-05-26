@@ -32,6 +32,12 @@ const Login = () => {
       return setErrorText('Please fill in all fields.');
     }
 
+    if (password.length < 5) {
+      setloading(false);
+      setError(true);
+      return setErrorText('Password too, is too short');
+    }
+
     const resp = await fetchData('login', userData);
 
     if (resp.msg === 'Login successful') {

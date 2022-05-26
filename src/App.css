@@ -1,5 +1,6 @@
-body {
-  font-family: 'Poppins', sans-serif;
+html {
+  font-family: 'Press Start 2P', cursive;
   background: linear-gradient(45deg, #0a2ea4 0%, #6c11b7 50%, #510075 100%);
+  background-repeat: no-repeat;
   height: 100vh;
 }

@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
 export const Header = styled.header`
-  border: 1px solid red;
-  padding: 1rem;
+  display: flex;
+  align-items: center;
+  left: 10rem;
+  justify-content: space-between;
+  padding: 2rem;
+  position: fixed;
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.5);
 `;
