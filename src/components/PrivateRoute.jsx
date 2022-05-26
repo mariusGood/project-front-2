@@ -1,16 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 import { Navigate } from 'react-router-dom';
+import AuthContext from '../AuthContext';
+import PropTypes from 'prop-types';
 
-const PrivateRoute = ({ children }) => {
-  if (localStorage.getItem('token')) {
-    return children;
-  }
-  return <Navigate to='/login' />;
-};
+function PrivateRoute({ children, ...rest }) {
+  const { isLogedIn } = useContext(AuthContext);
+  return (
+    <div {...rest} exact>
+      {isLogedIn ? children : <Navigate to='/login' />}
+    </div>
+  );
+}
 
 PrivateRoute.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.any,
 };
 
 export default PrivateRoute;
