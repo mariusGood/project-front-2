@@ -5,13 +5,14 @@ import styled from 'styled-components';
 import background from '../assets/background404.jpg';
 
 const Styled404 = styled.div`
-  display: grid;
-  align-items: center;
+  display: flex;
   background-image: url(${background});
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat;
+  background-size: 100vh auto;
   color: #ffffff;
-  height: 100vh;
+  flex-direction: column;
+  height: 130vh;
+  justify-content: center;
   text-align: center;
 `;
 

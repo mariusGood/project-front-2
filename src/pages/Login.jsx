@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Button from '../components/Button/Button';
 import InputField from '../components/InputField/InputField';
 import Container from '../components/Container/Container';
-import { fetchData } from '../utils/helper';
+import { postData } from '../utils/helper';
 import AuthContext from '../AuthContext';
 
 const Login = () => {
@@ -38,7 +38,7 @@ const Login = () => {
       return setErrorText('Password too, is too short');
     }
 
-    const resp = await fetchData('login', userData);
+    const resp = await postData('login', userData);
 
     if (resp.msg === 'Login successful') {
       localStorage.setItem('token', resp.token);

@@ -7,17 +7,15 @@ import AuthContext from '../../AuthContext';
 
 const links = [
   { id: 1, title: 'Home', to: '/' },
-  { id: 2, title: 'Top Games', to: '/' },
-  { id: 3, title: 'Categories', to: '/' },
-  { id: 4, title: 'Cart', to: '/' },
+  { id: 2, title: 'Categories', to: '/' },
+  { id: 3, title: 'Cart', to: '/cart' },
 ];
 
-const Header = () => {
+const Header = ({ getData }) => {
   const { logout } = useContext(AuthContext);
-
   return (
     <S.Header>
-      <Navigation links={links} />
+      <Navigation links={links} getData={getData} />
       <Button type='button' color='primary' onClick={logout}>
         Logout
       </Button>
@@ -27,6 +25,7 @@ const Header = () => {
 
 Header.propTypes = {
   children: PropTypes.any,
+  getData: PropTypes.func,
 };
 
 export default Header;
