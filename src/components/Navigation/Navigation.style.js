@@ -1,17 +1,15 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const StyledLink = styled.a`
+export const StyledLink = styled(Link)`
   text-decoration: none;
   color: #ffffff;
   font-weight: bold;
   font-size: large;
+  cursor: pointer;
 
-  &:hover {
-    box-shadow: 0px -5px 10px 10px #6c11b7;
-    background-color: #6c11b7;
-  }
-  &:focus {
-    box-shadow: 0px -5px 10px 10px #6c11b7;
+  :hover {
+    box-shadow: 0px 0px 10px 10px #6c11b7;
     background-color: #6c11b7;
   }
 `;

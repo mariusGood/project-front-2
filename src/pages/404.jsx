@@ -14,21 +14,31 @@ const Styled404 = styled.div`
   height: 100vh;
   justify-content: center;
   text-align: center;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    left: 40rem;
+    position: absolute;
+    top: 12rem;
+  }
 `;
 
 const Title = styled.h1`
-  margin: 0 auto;
+  margin: 1rem auto;
 `;
 
 const NotFound = () => {
   return (
     <Styled404>
-      <Title>404 page not found</Title>
-      <Link to={'/login'}>
-        <Button type='button' color='primary'>
-          Go back
-        </Button>
-      </Link>
+      <div>
+        <Title>404 page not found</Title>
+        <Link to={'/login'}>
+          <Button type='button' color='primary'>
+            Go back
+          </Button>
+        </Link>
+      </div>
     </Styled404>
   );
 };

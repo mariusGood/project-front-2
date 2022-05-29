@@ -5,7 +5,7 @@ export const Button = styled.button`
     props.color === 'primary' ? '#6C11B7' : '#ffffff'};
   border-radius: 5px;
 
-  border: 1px solid black;
+  border: 1px solid white;
   box-shadow: 0 5px 15px 0 rgb(0 0 0 / 15%);
   color: ${(props) => (props.color === 'primary' ? 'white' : '#6C11B7')};
   cursor: pointer;
@@ -15,8 +15,8 @@ export const Button = styled.button`
   margin: 0.5rem 0;
 
   :hover {
-    color: ${(props) => (props.color === 'primary' ? '#6C11B7' : 'white')};
     background: ${(props) => (props.color === 'primary' ? 'white' : '#6C11B7')};
+    color: ${(props) => (props.color === 'primary' ? '#6C11B7' : 'white')};
     transition: ease 0.2s;
   }
 `;
