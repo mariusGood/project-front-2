@@ -7,11 +7,11 @@ import background from '../assets/background404.jpg';
 const Styled404 = styled.div`
   display: flex;
   background-image: url(${background});
-  background-repeat: repeat;
-  background-size: 100vh auto;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #ffffff;
   flex-direction: column;
-  height: 130vh;
+  height: 100vh;
   justify-content: center;
   text-align: center;
 `;

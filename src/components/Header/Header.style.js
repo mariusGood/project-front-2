@@ -8,5 +8,6 @@ export const Header = styled.header`
   padding: 2rem;
   position: fixed;
   width: 80%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 999;
 `;

@@ -5,11 +5,14 @@ import * as S from './Navigation.style';
 const Navigation = ({ links, getData }) => {
   const [data, setData] = useState();
 
-  useEffect(() => {}, [data]);
+  useEffect(() => {
+    getData();
+  }, []);
 
   const handleClick = async () => {
-    const resp = await getData('products');
-    data ? setData() : setData(resp);
+    const token = localStorage.getItem('token');
+    const resp = await getData('auth/categories', token);
+    return data ? setData() : setData(resp);
   };
 
   return (
@@ -29,7 +32,7 @@ const Navigation = ({ links, getData }) => {
       <S.DropNav>
         {data &&
           data.data.map((el) => (
-            <S.DropList key={el.category}>{el.category}</S.DropList>
+            <S.DropList key={el.id}>{el.category}</S.DropList>
           ))}
       </S.DropNav>
     </S.StyledNav>

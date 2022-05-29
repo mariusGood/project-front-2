@@ -15,18 +15,34 @@ export const postData = async (resource, data) => {
   }
 };
 
-export const getData = async (resource) => {
+export const getData = async (resource, token) => {
   try {
-    const token = localStorage.getItem('token');
     const resp = await fetch(`${process.env.REACT_APP_URL}/${resource}`, {
       method: 'GET',
-      headers: { Authorization: `Bearer: ${token}` },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
     });
     const respInJs = await resp.json();
-
     return respInJs;
   } catch (error) {
-    console.log('error ===', error);
+    return error;
+  }
+};
+
+export const getItems = async (resource, token) => {
+  try {
+    const resp = await fetch(`${process.env.REACT_APP_URL}/${resource}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const respInJs = await resp.json();
+    return respInJs;
+  } catch (error) {
     return error;
   }
 };
