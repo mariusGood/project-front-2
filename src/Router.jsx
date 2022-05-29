@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AuthContext from './AuthContext';
 import PrivateRoute from './components/PrivateRoute';
 import NotFound from './pages/404';
+import Cart from './pages/Cart';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -34,6 +35,14 @@ const Router = () => {
             element={
               <PrivateRoute>
                 <Home />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path='/cart'
+            element={
+              <PrivateRoute>
+                <Cart />
               </PrivateRoute>
             }
           />
