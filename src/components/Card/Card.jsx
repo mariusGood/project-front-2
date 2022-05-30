@@ -17,11 +17,9 @@ function Card({ items }) {
         },
       });
       const respInJs = await resp.json();
-      console.log('respInJs ===', respInJs);
       respInJs.id ? navigate('/auth/cart') : setError(respInJs.err);
       return respInJs;
     } catch (error) {
-      console.log('error ===', error);
       return error;
     }
   };
