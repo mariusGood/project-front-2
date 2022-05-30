@@ -2,37 +2,44 @@ import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import * as S from './Card.style';
 import Button from '../Button/Button';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Card({ items }) {
-  const [loading, setloading] = useState(false);
-  const navigate = useNavigate();
-
-  if (!items) {
-    setloading(true);
-  }
-
-  const handleClick = async () => {
-    navigate('/cart');
+  let navigate = useNavigate();
+  const [error, setError] = useState();
+  const insertToCart = async (id) => {
+    try {
+      const resp = await fetch(`${process.env.REACT_APP_URL}/auth/cart/${id}`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer: ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      const respInJs = await resp.json();
+      console.log('respInJs ===', respInJs);
+      respInJs.id ? navigate('/auth/cart') : setError(respInJs.err);
+      return respInJs;
+    } catch (error) {
+      console.log('error ===', error);
+      return error;
+    }
   };
 
   return (
     <S.Card>
-      {loading ? (
-        <h2>Loading...</h2>
-      ) : (
-        <>
-          <h3 key={items.id}>{items.name}</h3>
-          <img src={items.img} alt={items.name} />
-          <p>{items.category}</p>
-          <p>{items.price + '$'}</p>
-          <Link to={`/cart?${items.id}`}>
-            <Button type='submit' color='primary' onClick={handleClick}>
-              buy
-            </Button>
-          </Link>
-        </>
-      )}
+      {error && <span style={{ color: 'green' }}>{error}</span>}
+      <h3 key={items.id}>{items.name}</h3>
+      <img src={items.img} alt={items.name} />
+      <p>{items.category}</p>
+      <p>{items.price + '$'}</p>
+      <Button
+        type='submit'
+        color='primary'
+        onClick={() => insertToCart(items.id)}
+      >
+        buy
+      </Button>
     </S.Card>
   );
 }

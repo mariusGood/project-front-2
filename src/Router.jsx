@@ -39,7 +39,7 @@ const Router = () => {
             }
           />
           <Route
-            path='/cart'
+            path='auth/cart'
             element={
               <PrivateRoute>
                 <Cart />

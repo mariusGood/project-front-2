@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+
 import Card from '../Card/Card';
 import * as S from './CardList.style';
+import { getData } from '../../utils/helper';
 
-function CardList({ getData }) {
+function CardList() {
   const [data, setData] = useState([]);
   // const [loading, setLoading] = useState(false);
 
@@ -19,17 +20,12 @@ function CardList({ getData }) {
     renderData();
   }, []);
 
-  console.log('data ===', data);
   return (
     <S.Grid>
       {data && data.map((items) => <Card key={items.id} items={items} />)}
     </S.Grid>
   );
 }
-
-CardList.propTypes = {
-  getData: PropTypes.func,
-};
 
 export default CardList;
 

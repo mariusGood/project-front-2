@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-// import PropTypes from 'prop-types';
 import Button from '../components/Button/Button';
 import InputField from '../components/InputField/InputField';
 import Container from '../components/Container/Container';
@@ -87,9 +86,5 @@ const Login = () => {
     </>
   );
 };
-
-// Login.propTypes = {
-//   login: PropTypes.func,
-// };
 
 export default Login;

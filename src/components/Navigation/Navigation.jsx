@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Navigation.style';
+import { getData } from '../../utils/helper';
 
-const Navigation = ({ links, getData }) => {
+const Navigation = ({ links }) => {
   const [data, setData] = useState();
-
-  useEffect(() => {
-    getData();
-  }, []);
 
   const handleClick = async () => {
     const token = localStorage.getItem('token');
@@ -41,7 +38,6 @@ const Navigation = ({ links, getData }) => {
 
 Navigation.propTypes = {
   links: PropTypes.array,
-  getData: PropTypes.func,
 };
 
 export default Navigation;
