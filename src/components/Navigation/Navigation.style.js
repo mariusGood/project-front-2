@@ -7,7 +7,7 @@ export const StyledLink = styled(Link)`
   font-weight: bold;
   font-size: large;
   cursor: pointer;
-
+  position: relative;
   :hover {
     box-shadow: 0px 0px 10px 10px #6c11b7;
     background-color: #6c11b7;

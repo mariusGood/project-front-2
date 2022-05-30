@@ -12,6 +12,11 @@ export const Input = styled.input`
     text-transform: uppercase;
     font-size: small;
   }
+
+  @media screen and (max-width: 504px) {
+    text-align: center;
+    border-radius: 1rem;
+  }
 `;
 
 export const Label = styled.label`
@@ -21,4 +26,8 @@ export const Label = styled.label`
   color: #ffffff;
   text-decoration: none solid #8a8a8a;
   text-transform: uppercase;
+
+  @media screen and (max-width: 504px) {
+    display: none;
+  }
 `;

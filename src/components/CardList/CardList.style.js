@@ -8,4 +8,16 @@ export const Grid = styled.div`
   position: relative;
   text-align: center;
   top: 20rem;
+
+  @media screen and (max-width: 1400px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: 1fr;
+  }
 `;

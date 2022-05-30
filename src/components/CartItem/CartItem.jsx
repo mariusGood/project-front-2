@@ -28,15 +28,28 @@ function CartItem({ items }) {
         <img src={items.image} alt={items.name} />
         <p>{items.category}</p> <p>{items.price + '$'}</p>
       </S.Div>
-      <Button type='submit' color='delete' onClick={() => deleteItem(items.id)}>
-        x
-      </Button>
+      <div>
+        <Button
+          type='submit'
+          color='primary'
+          onClick={() => deleteItem(items.id)}
+        >
+          buy
+        </Button>
+        <Button
+          type='submit'
+          color='delete'
+          onClick={() => deleteItem(items.id)}
+        >
+          x
+        </Button>
+      </div>
     </S.Card>
   );
 }
 
 CartItem.propTypes = {
-  items: propTypes.oneOf([string, number]),
+  items: propTypes.any,
 };
 
 export default CartItem;

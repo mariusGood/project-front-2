@@ -27,6 +27,7 @@ export const getData = async (resource, token) => {
     const respInJs = await resp.json();
     return respInJs;
   } catch (error) {
+    console.log('error ===', error);
     return error;
   }
 };

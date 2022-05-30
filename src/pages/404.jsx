@@ -14,13 +14,24 @@ const Styled404 = styled.div`
   height: 100vh;
   justify-content: center;
   text-align: center;
+  position: relative;
 
   div {
     display: flex;
     flex-direction: column;
-    left: 40rem;
-    position: absolute;
-    top: 12rem;
+    position: relative;
+    right: 2rem;
+    top: -12rem;
+  }
+
+  @media screen and (max-width: 1272px) {
+    background-repeat: repeat;
+    background-size: contain;
+    height: 150vh;
+
+    div {
+      left: 2rem;
+    }
   }
 `;
 

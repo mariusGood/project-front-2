@@ -17,6 +17,14 @@ export const Card = styled.div`
   h3 {
     width: 10rem;
   }
+
+  div button {
+    margin: 0 0.5rem;
+  }
+
+  @media screen and (max-width: 1041px) {
+    flex-direction: column;
+  }
 `;
 
 export const Div = styled.div`
@@ -24,4 +32,25 @@ export const Div = styled.div`
   align-items: center;
   justify-content: space-around;
   gap: 5rem;
+
+  @media screen and (max-width: 1041px) {
+    display: block;
+
+    h3 {
+      margin: 0 auto;
+    }
+
+    img {
+      height: 20rem;
+      width: auto;
+      align-items: center;
+    }
+
+    @media screen and (max-width: 500px) {
+      img {
+        height: 10rem;
+        width: auto;
+      }
+    }
+  }
 `;

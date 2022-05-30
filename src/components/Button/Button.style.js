@@ -19,4 +19,8 @@ export const Button = styled.button`
     color: ${(props) => (props.color === 'primary' ? '#6C11B7' : 'black')};
     transition: ease 0.2s;
   }
+
+  @media screen and (max-width: 504px) {
+    width: 100%;
+  }
 `;
