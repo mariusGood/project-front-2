@@ -1,19 +1,15 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import * as S from './pages.style';
+import * as S from './Pages.style';
 import Header from '../components/Header/Header';
-import { getData } from '../utils/helper';
+import CartList from '../components/CartList/CartList';
 
 const Cart = () => {
   return (
     <S.StyledPage>
-      <Header getData={getData} />
+      <Header />
+      <CartList />
     </S.StyledPage>
   );
 };
-
-// Cart.propTypes = {
-//   getCart: PropTypes.func,
-// };
 
 export default Cart;

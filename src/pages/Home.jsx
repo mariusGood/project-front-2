@@ -1,5 +1,5 @@
 import React from 'react';
-import * as S from './pages.style';
+import * as S from './Pages.style';
 import Header from '../components/Header/Header';
 import CardList from '../components/CardList/CardList';
 
