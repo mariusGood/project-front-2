@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from '../Cart/Cart.style';
 import Header from '../../components/Header/Header';
-import CartList from '../../components/CardList/CardList';
+import CartList from '../../components/CartList/CartList';
 
 const Cart = () => {
   return (

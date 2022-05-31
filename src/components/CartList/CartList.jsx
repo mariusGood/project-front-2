@@ -9,15 +9,17 @@ function CartList() {
     const token = localStorage.getItem('token');
     const resp = await getData('auth/cart ', token);
     setData(resp.data);
+    return resp;
   }
   useEffect(() => {
-    async () => {
-      renderData();
-    };
-  }, [data]);
+    renderData();
+  }, []);
   return (
     <S.List>
-      {data && data.map((items) => <CartItem key={items.id} items={items} />)}
+      {data &&
+        data.map((items) => (
+          <CartItem key={items.id} items={items} reload={renderData} />
+        ))}
     </S.List>
   );
 }

@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import * as S from './CartItem.style';
 import Button from '../Button/Button';
 
-function CartItem({ items }) {
+function CartItem({ items, reload }) {
   const deleteItem = async (id) => {
     try {
       const resp = await fetch(`${process.env.REACT_APP_URL}/auth/cart/${id}`, {
@@ -15,6 +15,7 @@ function CartItem({ items }) {
         body: JSON.stringify(),
       });
       const respInJs = await resp.json();
+      reload();
       return respInJs;
     } catch (error) {
       return error;
@@ -50,6 +51,7 @@ function CartItem({ items }) {
 
 CartItem.propTypes = {
   items: propTypes.any,
+  reload: propTypes.func,
 };
 
 export default CartItem;
