@@ -11,7 +11,9 @@ function CartList() {
     setData(resp.data);
   }
   useEffect(() => {
-    renderData();
+    async () => {
+      renderData();
+    };
   }, [data]);
   return (
     <S.List>

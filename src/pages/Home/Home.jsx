@@ -1,7 +1,7 @@
 import React from 'react';
-import * as S from './Pages.style';
-import Header from '../components/Header/Header';
-import CardList from '../components/CardList/CardList';
+import * as S from '../Home/Home.style';
+import Header from '../../components/Header/Header';
+import CardList from '../../components/CardList/CardList';
 
 const Home = () => {
   return (

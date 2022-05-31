@@ -4,12 +4,13 @@ import * as S from './CardList.style';
 import { getData } from '../../utils/helper';
 
 function CardList() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
 
   async function renderData() {
     const token = localStorage.getItem('token');
     const resp = await getData('auth/items ', token);
     setData(resp.data);
+    return resp;
   }
 
   useEffect(() => {

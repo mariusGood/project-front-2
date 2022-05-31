@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom';
 import AuthContext from './AuthContext';
 import PrivateRoute from './components/PrivateRoute';
-import NotFound from './pages/404';
-import Cart from './pages/Cart';
-import Home from './pages/Home';
+import NotFound from './pages/NotFoud/404';
+import Cart from './pages/Cart/Cart';
+import Home from './pages/Home/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import { Navigate } from 'react-router-dom';
 
 const Router = () => {
   const [isLogedIn, setisLogedIn] = useState(false);
+  const { id } = useParams;
 
   const contextValue = {
     isLogedIn,
@@ -39,7 +41,11 @@ const Router = () => {
             }
           />
           <Route
-            path='auth/cart'
+            path={`auth/cart:${id}`}
+            element={<Navigate to='/auth/cart' />}
+          />
+          <Route
+            path='/auth/cart'
             element={
               <PrivateRoute>
                 <Cart />
