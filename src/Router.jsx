@@ -7,11 +7,9 @@ import Cart from './pages/Cart/Cart';
 import Home from './pages/Home/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
-// import { Navigate } from 'react-router-dom';
 
 const Router = () => {
   const [isLogedIn, setisLogedIn] = useState(false);
-  // const { id } = useParams;
 
   const contextValue = {
     isLogedIn,
