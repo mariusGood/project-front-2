@@ -24,6 +24,12 @@ const Register = () => {
       password,
     };
 
+    if (!userData.email) {
+      setloading(false);
+      setError(true);
+      return setErrorText('Email is required');
+    }
+
     if (password !== rePassword) {
       setloading(false);
       setError(true);
@@ -44,24 +50,26 @@ const Register = () => {
 
     const resp = await postData('register', userData);
 
-    if (resp.msg.includes('Registration successful')) {
-      navigate('/login');
-    }
-
-    if (resp.msg.includes('Duplicate')) {
+    if (resp.err.includes('Duplicate')) {
       setloading(false);
       setError(true);
       return setErrorText('Email address already in use');
     }
+
+    if (resp.err[0].field === 'email') {
+      setloading(false);
+      setError(true);
+      return setErrorText(resp.err[0].message);
+    }
+
     if (resp.err[0].field === 'password') {
       setloading(false);
       setError(true);
       return setErrorText('Password is required');
     }
-    if (resp.err[0].field === 'email') {
-      setloading(false);
-      setError(true);
-      return setErrorText('Email is required');
+
+    if (resp.msg.includes('Registration successful')) {
+      return navigate('/login');
     }
   }
 

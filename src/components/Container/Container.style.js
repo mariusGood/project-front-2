@@ -25,6 +25,6 @@ export const Container = styled.div`
 
   @media screen and (max-width: 992px) {
     /* font-size: 0.75rem; */
-    width: 50%;
+    width: 60%;
   }
 `;
