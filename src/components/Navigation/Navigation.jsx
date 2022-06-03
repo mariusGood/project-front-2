@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Navigation.style';
-import { getData } from '../../utils/helper';
 
 const Navigation = ({ links }) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(false);
 
-  const handleClick = async () => {
-    const token = localStorage.getItem('token');
-    const resp = await getData('auth/categories', token);
-    return data ? setData() : setData(resp.data);
+  const handleClick = () => {
+    data !== false ? setData(false) : setData(true);
   };
+
+  const categories = [
+    { id: 1, name: 'Multi-player' },
+    { id: 2, name: 'Action' },
+    { id: 3, name: 'Survival' },
+    { id: 4, name: 'Sport' },
+    { id: 5, name: 'RPG' },
+  ];
 
   return (
     <S.StyledNav>
@@ -28,7 +33,9 @@ const Navigation = ({ links }) => {
         ))}
       <S.DropNav>
         {data &&
-          data.map((el) => <S.DropList key={el.id}>{el.category}</S.DropList>)}
+          categories.map((el) => (
+            <S.DropList key={el.id}>{el.name}</S.DropList>
+          ))}
       </S.DropNav>
     </S.StyledNav>
   );

@@ -5,9 +5,16 @@ export const Card = styled.div`
   background: rgba(0, 0, 0, 0.75);
   padding: 1rem;
   text-align: center;
-  margin-top: 2rem;
   color: white;
   position: relative;
+
+  h3 {
+    margin: 1rem auto;
+    max-width: 20rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 
   img {
     border: 1px solid white;
