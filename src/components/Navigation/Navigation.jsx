@@ -4,12 +4,12 @@ import * as S from './Navigation.style';
 import { getData } from '../../utils/helper';
 
 const Navigation = ({ links }) => {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
 
   const handleClick = async () => {
     const token = localStorage.getItem('token');
     const resp = await getData('auth/categories', token);
-    return data ? setData() : setData(resp);
+    return data ? setData() : setData(resp.data);
   };
 
   return (
@@ -28,9 +28,7 @@ const Navigation = ({ links }) => {
         ))}
       <S.DropNav>
         {data &&
-          data.data.map((el) => (
-            <S.DropList key={el.id}>{el.category}</S.DropList>
-          ))}
+          data.map((el) => <S.DropList key={el.id}>{el.category}</S.DropList>)}
       </S.DropNav>
     </S.StyledNav>
   );

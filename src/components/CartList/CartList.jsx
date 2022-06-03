@@ -14,15 +14,13 @@ function CartList() {
   useEffect(() => {
     renderData();
   }, []);
+
   return (
     <S.List>
-      {data ? (
+      {data &&
         data.map((items) => (
           <CartItem key={items.id} items={items} reload={renderData} />
-        ))
-      ) : (
-        <h1>Cart is empty</h1>
-      )}
+        ))}
     </S.List>
   );
 }

@@ -9,6 +9,12 @@ export const Grid = styled.div`
   text-align: center;
   top: 20rem;
 
+  h1 {
+    position: relative;
+    top: 5rem;
+    left: 40rem;
+  }
+
   @media screen and (max-width: 1400px) {
     grid-template-columns: repeat(3, 1fr);
   }

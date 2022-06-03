@@ -18,9 +18,15 @@ function CardList() {
   }, []);
 
   return (
-    <S.Grid>
-      {data && data.map((items) => <Card key={items.id} items={items} />)}
-    </S.Grid>
+    <>
+      <S.Grid>
+        {data ? (
+          data.map((items) => <Card key={items.id} items={items} />)
+        ) : (
+          <h1>Loading...</h1>
+        )}
+      </S.Grid>
+    </>
   );
 }
 

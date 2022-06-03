@@ -7,8 +7,8 @@ import AuthContext from '../../AuthContext';
 
 const links = [
   { id: 1, title: 'Home', to: '/' },
-  { id: 2, title: 'Categories', to: '/' },
-  { id: 3, title: 'Cart', to: '/auth/cart ' },
+  { id: 2, title: 'Categories', to: '' },
+  { id: 3, title: 'Cart', to: '/auth/cart' },
 ];
 
 const Header = () => {

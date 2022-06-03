@@ -43,7 +43,11 @@ export const Header = styled.header`
     }
 
     @media screen and (max-width: 900px) {
-      position: sticky;
+      width: 75%;
+    }
+
+    @media screen and (max-width: 425px) {
+      width: 50%;
     }
   }
 `;
