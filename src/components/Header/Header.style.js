@@ -43,7 +43,7 @@ export const Header = styled.header`
     }
 
     @media screen and (max-width: 900px) {
-      width: 75%;
+      width: 75vw;
     }
 
     @media screen and (max-width: 425px) {
@@ -52,7 +52,11 @@ export const Header = styled.header`
   }
 `;
 
-export const Menu = styled.a``;
+export const Menu = styled.a`
+  @media screen and (min-width: 1000px) {
+    display: none;
+  }
+`;
 
 export const MenuDiv = styled.div`
   @media screen and (max-width: 1000px) {

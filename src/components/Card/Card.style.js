@@ -27,21 +27,16 @@ export const Card = styled.div`
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    width: 80vw;
   }
 
   @media screen and (max-width: 865px) {
     display: grid;
-    justify-self: center;
-    padding: 0 6rem;
+    justify-content: center;
 
     img {
-      height: auto;
+      height: 15rem;
     }
-  }
-
-  @media screen and (max-width: 560px) {
-    rigth: 2rem;
-    padding: 0 4rem;
   }
 
   @media screen and (max-width: 510px) {

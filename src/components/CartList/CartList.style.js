@@ -12,4 +12,13 @@ export const List = styled.div`
   text-align: center;
   top: 15rem;
   width: 90%;
+  min-height: 19rem;
+  max-height: 100%;
+
+  h1 {
+    color: white;
+    position: relative;
+    top: 7rem;
+    right: 2rem;
+  }
 `;
