@@ -22,7 +22,7 @@ export const DropNav = styled.ul`
   top: 1rem;
 `;
 
-export const DropList = styled.a`
+export const DropList = styled.li`
   color: white;
   list-style: none;
   font-size: 0.75rem;

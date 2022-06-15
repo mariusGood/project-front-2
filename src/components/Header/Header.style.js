@@ -20,6 +20,14 @@ export const Header = styled.header`
     left: 5rem;
   }
 
+  @media screen and (max-width: 580px) {
+    left: 3rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    left: 1.5rem;
+  }
+
   @media screen and (max-width: 1000px) {
     button.sc-bczRLJ {
       display: none;
@@ -47,7 +55,8 @@ export const Header = styled.header`
     }
 
     @media screen and (max-width: 425px) {
-      width: 50%;
+      left: 2rem;
+      width: 65vw;
     }
   }
 `;

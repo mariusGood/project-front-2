@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import * as S from './CartItem.style';
-import Button from '../Button/Button';
 
 function CartItem({ items, reload }) {
+  const [value, setValue] = useState('1');
+
   const deleteItem = async (id) => {
     try {
       const resp = await fetch(`${process.env.REACT_APP_URL}/auth/cart/${id}`, {
@@ -27,24 +28,18 @@ function CartItem({ items, reload }) {
       <S.Div>
         <h3 key={items.id}>{items.name}</h3>
         <img src={items.image} alt={items.name} />
-        <p>{items.category}</p> <p>{items.price + '$'}</p>
+        <p>{items.price + '$'}</p>
       </S.Div>
-      <div>
-        <Button
-          type='submit'
-          color='primary'
-          onClick={() => deleteItem(items.id)}
-        >
-          buy
-        </Button>
-        <Button
-          type='submit'
-          color='delete'
-          onClick={() => deleteItem(items.id)}
-        >
-          x
-        </Button>
+      <div className='counter'>
+        <input
+          type='number'
+          value={value}
+          min='1'
+          max='99'
+          onChange={(e) => setValue(e.target.value)}
+        ></input>
       </div>
+      <i className='fa fa-trash' onClick={() => deleteItem(items.id)}></i>
     </S.Card>
   );
 }

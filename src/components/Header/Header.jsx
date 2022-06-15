@@ -11,7 +11,7 @@ const links = [
   { id: 3, title: 'Cart', to: '/auth/cart' },
 ];
 
-const Header = () => {
+const Header = ({ find }) => {
   const [block, setBlock] = useState(false);
 
   const handleClick = () => {
@@ -19,9 +19,10 @@ const Header = () => {
   };
 
   const { logout } = useContext(AuthContext);
+
   return (
     <S.Header>
-      <Navigation links={links} />
+      <Navigation links={links} find={find} />
       <Button className='logout' type='button' color='primary' onClick={logout}>
         Logout
       </Button>
@@ -46,7 +47,7 @@ const Header = () => {
 
 Header.propTypes = {
   children: PropTypes.any,
-  getData: PropTypes.func,
+  find: PropTypes.func,
 };
 
 export default Header;

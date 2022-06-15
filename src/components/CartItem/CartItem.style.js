@@ -8,18 +8,43 @@ export const Card = styled.div`
   text-align: center;
   border-bottom: 1px solid white;
 
+  button {
+    padding: 1rem;
+    margin: 0.5rem 1rem;
+    height: fit-content;
+  }
+
+  .counter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    input {
+      height: 2rem;
+      max-width: 3rem;
+      text-align: center;
+    }
+  }
+
+  i {
+    color: red;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin: 1rem;
+
+    :hover {
+      color: white;
+    }
+  }
+
   img {
     border: 1px solid white;
     height: 7rem;
-    width: 7rem;
+    width: 10rem;
   }
 
   h3 {
     width: 10rem;
-  }
-
-  div button {
-    margin: 0 0.5rem;
   }
 
   @media screen and (max-width: 1041px) {

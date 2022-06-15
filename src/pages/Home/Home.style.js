@@ -20,6 +20,6 @@ export const StyledPage = styled.div`
   }
 
   @media screen and (max-width: 865px) {
-    height: 550vh;
+    height: 900vh;
   }
 `;

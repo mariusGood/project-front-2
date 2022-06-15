@@ -8,17 +8,16 @@ export const List = styled.div`
   flex-direction: column;
   gap: 1rem;
   margin: 0 auto;
+  max-height: 100%;
+  min-height: 19rem;
   position: relative;
   text-align: center;
-  top: 15rem;
+  top: 10rem;
   width: 90%;
-  min-height: 19rem;
-  max-height: 100%;
 
-  h1 {
-    color: white;
-    position: relative;
-    top: 7rem;
-    right: 2rem;
+  input {
+    height: 2rem;
   }
 `;
+
+export const CartSum = styled.div``;

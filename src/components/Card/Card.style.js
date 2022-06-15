@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
-  border: 1px solid rgb(189, 189, 189);
   background: rgba(0, 0, 0, 0.75);
   padding: 1rem;
   text-align: center;
@@ -39,7 +38,11 @@ export const Card = styled.div`
     }
   }
 
-  @media screen and (max-width: 510px) {
+  @media screen and (max-width: 580px) {
     padding: 0;
+  }
+
+  @media screen and (max-width: 580px) {
+    left: -1rem;
   }
 `;

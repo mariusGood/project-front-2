@@ -4,8 +4,18 @@ import background from '../../assets/background2.jpg';
 export const StyledPage = styled.div`
   background: url(${background});
   background-size: 100vh;
-  height: 175vh;
+  height: 110vh;
   padding: 0 4rem;
+
+  button:first-of-type {
+    position: relative;
+    top: 7rem;
+    left: 5.5rem;
+  }
+
+  h1 {
+    margin-top: 7rem;
+  }
 
   @media screen and (max-width: 1400px) {
     height: 230vh;

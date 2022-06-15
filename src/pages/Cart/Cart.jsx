@@ -1,13 +1,24 @@
 import React from 'react';
 import * as S from '../Cart/Cart.style';
-import Header from '../../components/Header/Header';
 import CartList from '../../components/CartList/CartList';
+import { useNavigate } from 'react-router-dom';
+import Button from '../../components/Button/Button';
 
 const Cart = () => {
+  let navigate = useNavigate();
+
+  const handleClick = () => {
+    return navigate('/');
+  };
+
   return (
     <S.StyledPage>
-      <Header />
-      <CartList />
+      <>
+        <Button type='button' color='primary' onClick={handleClick}>
+          Go back
+        </Button>
+        <CartList />
+      </>
     </S.StyledPage>
   );
 };
