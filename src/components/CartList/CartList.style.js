@@ -21,6 +21,9 @@ export const List = styled.div`
 
   @media screen and (max-width: 880px) {
     width: 60%;
+    h1 {
+      font-size: large;
+    }
   }
 `;
 
