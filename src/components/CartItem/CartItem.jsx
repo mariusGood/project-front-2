@@ -30,15 +30,13 @@ function CartItem({ items, reload }) {
         <img src={items.image} alt={items.name} />
         <p>{items.price + '$'}</p>
       </S.Div>
-      <div className='counter'>
-        <input
-          type='number'
-          value={value}
-          min='1'
-          max='99'
-          onChange={(e) => setValue(e.target.value)}
-        ></input>
-      </div>
+      <input
+        type='number'
+        value={value}
+        min='1'
+        max='99'
+        onChange={(e) => setValue(e.target.value)}
+      ></input>
       <i className='fa fa-trash' onClick={() => deleteItem(items.id)}></i>
     </S.Card>
   );

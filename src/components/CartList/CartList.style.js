@@ -18,6 +18,10 @@ export const List = styled.div`
   input {
     height: 2rem;
   }
+
+  @media screen and (max-width: 880px) {
+    width: 60%;
+  }
 `;
 
 export const CartSum = styled.div``;

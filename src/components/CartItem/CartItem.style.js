@@ -14,16 +14,10 @@ export const Card = styled.div`
     height: fit-content;
   }
 
-  .counter {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    input {
-      height: 2rem;
-      max-width: 3rem;
-      text-align: center;
-    }
+  input {
+    height: 2rem;
+    max-width: 3rem;
+    text-align: center;
   }
 
   i {
@@ -47,8 +41,8 @@ export const Card = styled.div`
     width: 10rem;
   }
 
-  @media screen and (max-width: 1041px) {
-    flex-direction: column;
+  @media screen and (max-width: 880px) {
+    display: block;
   }
 `;
 
@@ -59,22 +53,36 @@ export const Div = styled.div`
   gap: 5rem;
 
   @media screen and (max-width: 1041px) {
-    display: block;
-
     h3 {
-      margin: 0 auto;
+      font-size: medium;
     }
 
-    img {
-      height: 20rem;
-      width: auto;
-      align-items: center;
+    @media screen and (max-width: 880px) {
+      display: block;
+
+      h3 {
+        margin: 0.5rem auto;
+      }
     }
 
     @media screen and (max-width: 500px) {
       img {
         height: 10rem;
-        width: auto;
+        width: 10rem;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      img {
+        height: 8rem;
+        width: 8rem;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      h3 {
+        font-size: small;
+        width: 5rem;
       }
     }
   }

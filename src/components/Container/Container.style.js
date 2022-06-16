@@ -6,7 +6,7 @@ export const Container = styled.div`
   border-radius: 0.5rem;
   width: 35%;
   padding: 2rem;
-  margin: 15rem auto;
+  margin: 12rem auto;
 
   @media screen and (max-width: 504px) {
     background-color: inherit;

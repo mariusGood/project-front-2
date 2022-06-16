@@ -4,7 +4,7 @@ import * as S from './Navigation.style';
 
 const Navigation = ({ links, find }) => {
   const [data, setData] = useState(false);
-  const [category, setCategory] = useState();
+  const [category, setCategory] = useState('');
 
   const handleClick = () => {
     data !== false ? setData(false) : setData(true);

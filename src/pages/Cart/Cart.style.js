@@ -7,7 +7,7 @@ export const StyledPage = styled.div`
   height: 110vh;
   padding: 0 4rem;
 
-  button:first-of-type {
+  button {
     position: relative;
     top: 7rem;
     left: 5.5rem;
@@ -16,20 +16,23 @@ export const StyledPage = styled.div`
   h1 {
     margin-top: 7rem;
   }
-
-  @media screen and (max-width: 1400px) {
-    height: 230vh;
+  @media screen and (max-width: 2400px) {
+    height: 150vh;
   }
 
-  @media screen and (max-width: 1200px) {
-    height: 280vh;
-  }
-
-  @media screen and (max-width: 1000px) {
-    height: 550vh;
+  @media screen and (max-width: 880px) {
+    button {
+      left: 9rem;
+    }
   }
 
   @media screen and (max-width: 865px) {
     height: 550vh;
+  }
+
+  @media screen and (max-width: 505px) {
+    button {
+      left: 0;
+    }
   }
 `;

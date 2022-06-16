@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Card = styled.div`
   background: rgba(0, 0, 0, 0.75);
+  border-radius: 3px;
   padding: 1rem;
   text-align: center;
   color: white;
@@ -32,6 +33,11 @@ export const Card = styled.div`
   @media screen and (max-width: 865px) {
     display: grid;
     justify-content: center;
+    align-items: center;
+
+    p {
+      margin: 0;
+    }
 
     img {
       height: 15rem;
