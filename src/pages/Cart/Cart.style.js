@@ -17,7 +17,7 @@ export const StyledPage = styled.div`
     margin-top: 7rem;
   }
   @media screen and (max-width: 2400px) {
-    height: 150vh;
+    height: 200vh;
   }
 
   @media screen and (max-width: 880px) {
