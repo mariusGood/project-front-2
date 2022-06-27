@@ -5,8 +5,8 @@ import PrivateRoute from './components/PrivateRoute';
 import NotFound from './pages/NotFoud/404';
 import Cart from './pages/Cart/Cart';
 import Home from './pages/Home/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
 
 const Router = () => {
   const [isLogedIn, setisLogedIn] = useState(false);

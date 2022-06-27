@@ -2,32 +2,34 @@ import styled from 'styled-components';
 
 export const Input = styled.input`
   width: 100%;
-  padding: 1rem;
+  padding: 2vh;
   border: 1px solid #8a8a8a;
   box-sizing: border-box;
-  font-size: 1rem;
-  margin: 0.5rem 0 0.5rem;
+  font-size: 2vh;
+  margin: 0.5vw 0 0.5vw;
 
   ::placeholder {
     text-transform: uppercase;
-    font-size: small;
   }
 
-  @media screen and (max-width: 504px) {
+  @media screen and (max-width: 426px) {
     text-align: center;
+    margin-bottom: 1.5vh;
     border-radius: 1rem;
+    padding: 1.5vh;
+    font-size: 2vh;
   }
 `;
 
 export const Label = styled.label`
-  width: 3rem;
-  height: 1rem;
-  font-size: 1rem;
+  width: 3vw;
+  height: 1vw;
+  font-size: 2vh;
   color: #ffffff;
   text-decoration: none solid #8a8a8a;
   text-transform: uppercase;
 
-  @media screen and (max-width: 504px) {
+  @media screen and (max-width: 426px) {
     display: none;
   }
 `;

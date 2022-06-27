@@ -10,7 +10,7 @@ export const Header = styled.header`
   position: fixed;
   width: 80%;
   background-color: rgba(0, 0, 0, 0.75);
-  z-index: 999;
+  z-index: 10;
 
   @media screen and (max-width: 1400px) {
     left: 7rem;
@@ -54,7 +54,7 @@ export const Header = styled.header`
       width: 75vw;
     }
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 426px) {
       left: 2rem;
       width: 65vw;
     }
